@@ -42,7 +42,7 @@ class ChatBot:
                         path='/', domain=None, httponly=True, samesite='Lax')
 
     async def __get_userinfo(self):
-        access_token = request.cookies.get('access-token')
+        access_token = getenv('PANDORA_ACCESS_TOKEN')
         try:
             payload = check_access_token(access_token)
             if True == payload:
